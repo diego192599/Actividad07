@@ -21,3 +21,31 @@ def RegistrarEstudiante():
                 print("La nota del estudiante no puede ser menor a 0 o mayor a 100")
             else:
                 print("La nota del parcial se ha guardado correctamente")
+            notaProyecto=int(input("Ingrese la nota del proyecto: "))
+            if 0< notaProyecto>100:
+                print("La nota del proyecto no puede ser menor a 0 o mayor a 100")
+            else:
+                print("Se ha guardado correctamente la nota del proyecto")
+
+        estudaintes[carnet]={
+            "nombre": nombre,
+             "edad": edad,
+             "carrera": carrera,
+              "nombreCursos":{
+                  "notadeTarea":notadeTare,
+                  "notaParcial":notaParcial,
+                  "notaProyecto":notaProyecto
+              }
+        }
+
+def MostrarEstudiantes():
+    print("\n Lista de estudiantes")
+    for carnet,datos in estudaintes.items():
+        print(f"\n Carnet: {carnet}")
+        print(f"Nombre: {datos['nombre']}")
+        print(f"Edad: {datos['edad']}")
+        print(f"Carrera: {datos['carrera']}")
+        print(f"Nombre del curso: {datos['nombreCurso']}")
+        print(f"Nota de tarea: {datos['nombreCurso']['notadeTare']}")
+        print(f"Nota de Parcial: {datos['nombreCurso']['notaParcial']}")
+        print(f"Nota de Proyecto: {datos['nombreCurso']['notaProyecto']}")
