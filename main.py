@@ -7,15 +7,16 @@ def RegistrarEstudiante():
         nombre=input("Ingrese el nombre del estudiante: ")
         edad=int(input("Ingrese la edad del estudiante: "))
         carrera=input("Ingrese la carrera del estudiante: ")
-        cantidadCursos=int(input("Ingrese la cantidad de cursos que se le asignan al estudiante"))
-        for i in range(cantidadCursos):
-            print(f"\n Cursos que se asignaran curso #{i+1}")
-            Curso=input("Ingrese el nombre del curso")
+        cantidadCursos=int(input("Ingrese la cantidad de cursos que se le asignan al estudiante: "))
+        for j in range(cantidadCursos):
+            print(f"\n Cursos que se asignaran curso #{j+1}")
+            codigocurso=input("Ingrese el codigo del curso: ")
+            nombreCurso=input("Ingrese el nombre del curso: ")
             notadeTare=int(input("Ingrese la nota del estudiante: "))
             if 0<notadeTare > 100:
                 print("La nota del estudiante no puede ser menor a 0 o mayor a 100 ")
             else:
-                print("La nota se ha guardado correctamente")
+                print("La nota se ha guardado correctamente: ")
             notaParcial=int(input("Ingrese la nota del parcial de estudiante: "))
             if 0<notaParcial >100:
                 print("La nota del estudiante no puede ser menor a 0 o mayor a 100")
@@ -31,9 +32,9 @@ def RegistrarEstudiante():
             "nombre": nombre,
              "edad": edad,
              "carrera": carrera,
-              "nombreCursos":{
-                  "Curso": Curso,
-                  "notadeTarea":notadeTare,
+              "codigocurso":{
+                  "nombreCurso": nombreCurso,
+                  "notaTare": notadeTare,
                   "notaParcial":notaParcial,
                   "notaProyecto":notaProyecto
               }
@@ -46,11 +47,11 @@ def MostrarEstudiantes():
         print(f"Nombre: {datos['nombre']}")
         print(f"Edad: {datos['edad']}")
         print(f"Carrera: {datos['carrera']}")
-        print(f"Nombre del curso: {datos['nombreCurso']}")
-        print(f"Nombre del curso asignado: {datos['nombreCurso']['Curso']}")
-        print(f"Nota de tarea: {datos['nombreCurso']['notadeTare']}")
-        print(f"Nota de Parcial: {datos['nombreCurso']['notaParcial']}")
-        print(f"Nota de Proyecto: {datos['nombreCurso']['notaProyecto']}")
+        print(f"Nombre del curso: {datos['codigocurso']}")
+        print(f"Nombre del curso asignado: {datos['codigocurso']['nombreCurso']}")
+        print(f"Nota de tarea: {datos['codigocurso']['notadeTare']}")
+        print(f"Nota de Parcial: {datos['codigocurso']['notaParcial']}")
+        print(f"Nota de Proyecto: {datos['codigocurso']['notaProyecto']}")
 
     print("\n Calculo de promedio")
     promedio=0
@@ -67,9 +68,9 @@ def BuscarPorCanet():
        print(f"Nombre: {estudainte['nombre']}")
        print(f"Edad:{estudainte['edad']}")
        print(f"Carrera: {estudainte['carrera']}")
-       print(f"Nombre del curso: {estudainte['nombreCurso']['Curso']}")
-       print(f"Nota de la tarea : {estudainte['nombreCurso']['notadeTare']}")
-       print(f"Nota de Parcial:{estudainte['nombreCurso']['notaParcial']}")
+       print(f"Nombre del curso: {estudainte['nombreCurso']['curso']}")
+       print(f"Nota de la tarea: {estudainte['nombreCurso']['notadeTare']}")
+       print(f"Nota de Parcial: {estudainte['nombreCurso']['notaParcial']}")
        print(f"Nota de Proyecto: {estudainte['nombreCurso']['notaProyecto']}")
     else:
         print(f"EL {buscado} no existe en este registro")
